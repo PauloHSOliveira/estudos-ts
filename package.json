@@ -19,5 +19,8 @@
   "homepage": "https://github.com/codephs/estudos-ts#readme",
   "dependencies": {
     "git-commit-msg-linter": "^3.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^4.0.3"
   }
 }
