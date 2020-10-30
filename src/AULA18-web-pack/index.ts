@@ -1,1 +1,3 @@
-console.log('Olá mundo');
+import { formControl } from './form-control';
+
+formControl();
