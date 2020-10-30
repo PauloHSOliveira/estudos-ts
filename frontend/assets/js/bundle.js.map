@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://Typescript/./src/AULA18-web-pack/index.ts"],"names":[],"mappings":";;;;;;AAAA,OAAO,CAAC,GAAG,CAAC,WAAW,CAAC,CAAC","file":"bundle.js","sourcesContent":["console.log('Olá mundo');\n"],"sourceRoot":""}
