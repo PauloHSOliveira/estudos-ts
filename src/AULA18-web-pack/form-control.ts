@@ -11,14 +11,17 @@ export const formControl = () => {
     '.password2',
   ) as HTMLInputElement;
 
-  form.addEventListener('submit', function (event: Event) {
+  const submitFn = (event: Event) => {
     event.preventDefault();
-    hideErrorMessages(this);
+    const targert = event.target as HTMLFormElement;
+    hideErrorMessages(targert);
     checkEmptyFields(username, email, password, confirmPassword);
     checkEmail(email);
     checkPasswordConfirmation(password, confirmPassword);
-    if (shouldSendForm(this)) console.log('Formulario enviado');
-  });
+    if (shouldSendForm(targert)) console.log('Formulario enviado');
+  };
+
+  form.addEventListener('submit', submitFn);
 
   const checkEmptyFields = (...inputs: HTMLInputElement[]): void => {
     inputs.forEach((input) => {
