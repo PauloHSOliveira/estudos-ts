@@ -33,22 +33,26 @@ console.log(pessoa2.cpf); // call person 2 with 1 setter
 // resolved change this.cpf to this._cpf
 
 export class Carro {
+  static defaultBoard = 0;
+
   constructor(
-    private brand: string,
-    private model: string,
-    private _board: number,
-  ) {
-    this.board = _board;
+    public brand: string,
+    public model: string,
+    public _board: number,
+  ) {}
+
+  defaultMethod(): void {
+    console.log(Carro.defaultBoard);
   }
 
-  set board(value: number) {
-    this._board = value;
-  }
-
-  get board(): number {
-    return this._board;
+  static criaCarro(brand: string, model: string): Carro {
+    return new Carro(brand, model, Carro.defaultBoard);
   }
 }
 
 const fiatToro = new Carro('Fiat', 'Toro', 5878);
-console.log(fiatToro.board);
+console.log(fiatToro);
+
+const punto = Carro.criaCarro('Fiat', 'Punto');
+console.log(punto);
+console.log(Carro.defaultBoard);
